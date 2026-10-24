@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task 1 - Battle</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="wrap page">
+      <header class="topbar">
+        <a class="back" href="index.html">← All tasks</a>
+        <div>
+          <h1>Turn-based battle</h1>
+          <p class="subtitle">Defeat the opponent before your health reaches zero.</p>
+        </div>
+      </header>
+
+      <section class="battle-layout" aria-live="polite">
+        <article class="fighter panel">
+          <div class="avatar">⚔️</div>
+          <h2>Hero</h2>
+          <div class="hp-track"><div id="heroHpBar" class="hp-bar"></div></div>
+          <p id="heroHpText" class="hp-text"></p>
+        </article>
+
+        <section class="battle-center panel">
+          <h2 id="roundTitle">Round 1</h2>
+          <p id="status" class="status">Choose an action to start the battle.</p>
+          <div class="stat-row">
+            <div><strong id="healCount">3</strong>Heals left</div>
+            <div><strong id="critChance">10%</strong>Critical hit</div>
+          </div>
+          <div class="actions">
+            <button class="button" data-action="attack">Attack</button>
+            <button class="button secondary" data-action="defend">Defend</button>
+            <button class="button warn" data-action="heal">Heal +20 HP</button>
+            <button id="restart" class="button secondary" hidden>Start again</button>
+          </div>
+        </section>
+
+        <article class="fighter enemy panel">
+          <div class="avatar">👾</div>
+          <h2>Enemy</h2>
+          <div class="hp-track"><div id="enemyHpBar" class="hp-bar"></div></div>
+          <p id="enemyHpText" class="hp-text"></p>
+        </article>
+
+        <section class="battle-log panel">
+          <h2>Last actions</h2>
+          <ol id="log"></ol>
+        </section>
+      </section>
+    </main>
+    <script src="task1-battle.js"></script>
+  </body>
+</html>

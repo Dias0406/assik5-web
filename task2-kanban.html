@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Task 2 - Kanban</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="wrap page">
+      <header class="topbar">
+        <a class="back" href="index.html">← All tasks</a>
+        <div>
+          <h1>Study Kanban</h1>
+          <p class="subtitle">A page rendered from an array of task objects.</p>
+        </div>
+      </header>
+      <section class="kanban-controls">
+        <label class="field">Search tasks<input id="search" type="search" placeholder="Try 'JavaScript'" aria-describedby="boardMessage">
+      </label>
+      <label class="field">Filter by tag<select id="tagFilter">
+      <option value="all">All tags</option>
+      <option>JavaScript</option>
+      <option>Design</option>
+      <option>Research</option>
+      <option>Writing</option>
+    </select>
+  </label>
+  <label class="field">Sort by<select id="sort">
+  <option value="priority">Priority</option>
+  <option value="title">Title</option>
+</select>
+</label>
+</section>
+<div class="kanban-meta">
+  <span id="boardMessage" aria-live="polite">
+  </span>
+  <span id="progressText">
+  </span>
+</div>
+<div class="progress" aria-label="Completed work">
+  <div id="progressBar">
+  </div>
+</div>
+<section id="board" class="board" aria-label="Kanban board">
+</section>
+</main>
+<script src="task2-kanban.js">
+</script>
+</body>
+</html>
+

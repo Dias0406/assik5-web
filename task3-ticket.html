@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Task 3 - Ticket Builder</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="wrap page">
+      <header class="topbar">
+        <a class="back" href="index.html">← All tasks</a>
+        <div>
+          <h1>Ticket builder</h1>
+          <p class="subtitle">Live preview, clear validation, and a final booking code.</p>
+        </div>
+      </header>
+      <section class="form-layout">
+        <form id="ticketForm" class="panel" novalidate>
+          <div id="formSummary" class="form-summary" tabindex="-1">
+          </div>
+          <div class="form-grid">
+            <label class="field full">Event<select name="event">
+            <option value="">Choose an event</option>
+            <option value="Design Summit" data-date="2026-11-12">Design Summit - 12 Nov</option>
+            <option value="Frontend Lab" data-date="2026-11-18">Frontend Lab - 18 Nov</option>
+            <option value="JavaScript Jam" data-date="2026-11-25">JavaScript Jam - 25 Nov</option>
+          </select>
+          <span class="feedback">
+          </span>
+        </label>
+        <label class="field">Date<input name="date" type="date">
+        <span class="feedback">
+        </span>
+      </label>
+      <label class="field">Ticket type<select name="type">
+      <option value="">Select type</option>
+      <option value="Standard">Standard - $25</option>
+      <option value="Student">Student - $15</option>
+      <option value="VIP">VIP - $50</option>
+    </select>
+    <span class="feedback">
+    </span>
+  </label>
+  <label class="field">Quantity<input name="quantity" type="number" min="1" max="6" value="1">
+  <span class="feedback">
+  </span>
+</label>
+<label class="field">Promo code<input name="promo" type="text" placeholder="SAVE10">
+<span class="feedback">
+</span>
+</label>
+<label class="field">Your name<input name="name" type="text" autocomplete="name">
+<span class="feedback">
+</span>
+</label>
+<label class="field">Email<input name="email" type="email" autocomplete="email">
+<span class="feedback">
+</span>
+</label>
+<label class="field full">
+  <span>Agree to event rules</span>
+  <select name="agreement">
+    <option value="">Choose one</option>
+    <option value="yes">I agree</option>
+    <option value="no">I do not agree</option>
+  </select>
+  <span class="feedback">
+  </span>
+</label>
+</div>
+<button class="button" type="submit">Create ticket</button>
+</form>
+<aside class="ticket-preview panel">
+  <p class="ticket-label">Live preview</p>
+  <div id="preview" class="ticket">
+    <p class="ticket-label">Event pass</p>
+    <h2>Choose an event</h2>
+    <p>Your ticket details will appear here as you type.</p>
+  </div>
+</aside>
+</section>
+<section class="rules panel">
+  <h2>Validation rules</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Rule</th>
+        <th>Valid example</th>
+        <th>Invalid example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Event/date</td>
+        <td>Date must match the selected event.</td>
+        <td>Design Summit, 12 Nov</td>
+        <td>Design Summit, 18 Nov</td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td>1 to 6 seats; sold-out events have no seats.</td>
+        <td>2</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Promo</td>
+        <td>Optional; only SAVE10 or STUDENT.</td>
+        <td>SAVE10</td>
+        <td>DEAL50</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>At least two words, 2 characters each.</td>
+        <td>Ada Lovelace</td>
+        <td>Ada</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>Must be an email address.</td>
+        <td>ada@example.com</td>
+        <td>ada@</td>
+      </tr>
+      <tr>
+        <td>Agreement</td>
+        <td>Must agree to event rules.</td>
+        <td>I agree</td>
+        <td>I do not agree</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+</main>
+<script src="task3-ticket.js">
+</script>
+</body>
+</html>
+
